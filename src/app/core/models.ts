@@ -25,9 +25,3 @@ export interface Product {
   care: string[];
   bestSeller: boolean;
 }
-
-export interface Testimonial {
-  name: string;
-  role: string;
-  quote: string;
-}
