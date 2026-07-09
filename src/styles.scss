@@ -302,7 +302,8 @@ p {
 .contact-card,
 .contact-form,
 .legal-content,
-.spec-care article {
+.spec-care article,
+.team-card {
   background: var(--card);
   border: 1px solid var(--line);
   border-radius: 8px;
@@ -431,32 +432,75 @@ p {
   top: 0.8rem;
 }
 
-.testimonials {
-  overflow: hidden;
-}
-
-.testimonial-track {
-  animation: slideTrack 28s linear infinite;
+.team-grid {
   display: grid;
-  gap: 1rem;
-  grid-template-columns: repeat(3, minmax(280px, 1fr));
+  gap: 1.3rem;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
 }
 
-.testimonial-track article {
-  background: linear-gradient(135deg, #fff, #f4fbf9);
-  border: 1px solid var(--line);
-  border-radius: 8px;
-  padding: 1.3rem;
+.team-card {
+  align-items: flex-start;
+  display: flex;
+  flex-direction: column;
+  gap: 0.8rem;
+  padding: 1.5rem;
 }
 
-.testimonial-track i {
-  color: var(--coral);
+.team-card h3 {
+  margin-bottom: 0.2rem;
+}
+
+.team-card .role {
+  color: var(--teal);
+  font-size: 0.92rem;
+  font-weight: 600;
+  margin: 0;
+}
+
+.team-card.hero-card {
+  background: linear-gradient(135deg, rgba(29, 53, 87, 0.08), rgba(42, 157, 143, 0.08));
+  border: 1px solid rgba(42, 157, 143, 0.15);
+  grid-column: 1;
+  grid-row: 1 / 3;
+  min-height: 100%;
+  padding: 2rem;
+}
+
+.team-card.hero-card h3 {
   font-size: 1.4rem;
 }
 
-.testimonial-track strong,
-.testimonial-track span {
-  display: block;
+.team-card.medium-card {
+  background: rgba(244, 162, 97, 0.08);
+  border: 1px solid rgba(244, 162, 97, 0.15);
+}
+
+.contact-info {
+  display: grid;
+  gap: 0.5rem;
+  margin-top: 0.8rem;
+  width: 100%;
+}
+
+.contact-info p {
+  align-items: center;
+  display: flex;
+  gap: 0.6rem;
+  margin: 0;
+}
+
+.contact-info i {
+  color: var(--teal);
+  font-size: 0.85rem;
+}
+
+.contact-info a {
+  color: var(--primary);
+  text-decoration: none;
+}
+
+.contact-info a:hover {
+  text-decoration: underline;
 }
 
 .newsletter,
@@ -758,13 +802,6 @@ textarea:focus {
   transform: translateY(0);
 }
 
-@keyframes slideTrack {
-  0%, 12% { transform: translateX(0); }
-  33%, 45% { transform: translateX(-1%); }
-  66%, 78% { transform: translateX(1%); }
-  100% { transform: translateX(0); }
-}
-
 @keyframes shimmer {
   to {
     background-position: -240% 0;
@@ -791,8 +828,15 @@ textarea:focus {
   .product-grid,
   .skeleton-grid,
   .value-grid,
-  .category-mosaic {
+  .category-mosaic,
+  .team-grid {
     grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .team-card.hero-card {
+    grid-column: 1;
+    grid-row: auto;
+    min-height: auto;
   }
 }
 
@@ -821,7 +865,8 @@ textarea:focus {
   .category-mosaic,
   .info-grid,
   .spec-care,
-  .contact-form {
+  .contact-form,
+  .team-grid {
     grid-template-columns: 1fr;
   }
 
@@ -833,10 +878,5 @@ textarea:focus {
 
   .stats-band article:last-child {
     border-bottom: 0;
-  }
-
-  .testimonial-track {
-    animation: none;
-    grid-template-columns: 1fr;
   }
 }
