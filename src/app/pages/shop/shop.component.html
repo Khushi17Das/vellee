@@ -1,0 +1,65 @@
+<section class="page-hero">
+  <span class="eyebrow">Product catalogue</span>
+  <h1>Explore premium towels and hospitality linen without checkout clutter.</h1>
+  <p>Search, filter, and open detailed product pages for features, materials, sizes, colors, specifications, and care instructions.</p>
+</section>
+
+<section class="section catalogue-layout">
+  <aside class="filters" appReveal>
+    <label>
+      <span>Search products</span>
+      <input type="search" [ngModel]="search()" (ngModelChange)="search.set($event); resetVisible()" placeholder="Bath towel, hotel, cotton">
+    </label>
+    <label>
+      <span>Category</span>
+      <select [ngModel]="category()" (ngModelChange)="category.set($event); resetVisible()">
+        <option value="all">All categories</option>
+        @for (item of categories; track item.id) {
+          <option [value]="item.slug">{{ item.name }}</option>
+        }
+      </select>
+    </label>
+    <div class="filter-note">
+      <i class="fa-solid fa-circle-info"></i>
+      <p>This is a professional catalogue. Product prices, cart, checkout, and payment features are intentionally excluded.</p>
+    </div>
+  </aside>
+
+  <div>
+    @if (loading()) {
+      <div class="skeleton-grid">
+        @for (item of [1,2,3,4,5,6]; track item) {
+          <div class="skeleton-card"></div>
+        }
+      </div>
+    } @else {
+      <div class="product-grid" appReveal>
+        @for (product of visibleProducts(); track product.id) {
+          <a class="product-card" [routerLink]="['/products', product.slug]">
+            <div class="product-media">
+              <img [src]="product.image" [alt]="product.name" loading="lazy">
+              <span>{{ product.badge }}</span>
+            </div>
+            <div>
+              <small>{{ product.category.replace('-', ' ') }}</small>
+              <h2>{{ product.name }}</h2>
+              <p>{{ product.shortDescription }}</p>
+              <strong>View details <i class="fa-solid fa-arrow-right"></i></strong>
+            </div>
+          </a>
+        } @empty {
+          <div class="empty-state">
+            <i class="fa-solid fa-magnifying-glass"></i>
+            <h2>No matching products</h2>
+            <p>Try a broader search or select all categories.</p>
+          </div>
+        }
+      </div>
+      @if (visibleProducts().length < products().length) {
+        <div class="load-more">
+          <button class="btn ghost" type="button" (click)="loadMore()"><i class="fa-solid fa-plus"></i> Load More</button>
+        </div>
+      }
+    }
+  </div>
+</section>

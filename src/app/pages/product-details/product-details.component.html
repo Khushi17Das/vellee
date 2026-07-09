@@ -1,0 +1,92 @@
+@if (product(); as item) {
+  <section class="section product-detail">
+    <div class="detail-gallery" appReveal>
+      <img class="detail-main" [src]="item.image" [alt]="item.name">
+      <div>
+        @for (image of item.gallery; track image) {
+          <img [src]="image" [alt]="item.name + ' view'" loading="lazy">
+        }
+      </div>
+    </div>
+
+    <article class="detail-copy" appReveal>
+      <span class="eyebrow">{{ item.badge }}</span>
+      <h1>{{ item.name }}</h1>
+      <p>{{ item.description }}</p>
+      <a class="btn primary" routerLink="/contact" [queryParams]="{ product: item.slug }"><i class="fa-solid fa-envelope"></i> Enquire About Product</a>
+
+      <section>
+        <h2>Features</h2>
+        <ul class="feature-list">
+          @for (feature of item.features; track feature) {
+            <li><i class="fa-solid fa-check"></i> {{ feature }}</li>
+          }
+        </ul>
+      </section>
+
+      <section class="info-grid">
+        <div>
+          <h2>Material</h2>
+          <p>{{ item.material }}</p>
+        </div>
+        <div>
+          <h2>Available Sizes</h2>
+          <p>{{ item.sizes.join(', ') }}</p>
+        </div>
+        <div>
+          <h2>Available Colors</h2>
+          <div class="swatches">
+            @for (color of item.colors; track color) {
+              <span>{{ color }}</span>
+            }
+          </div>
+        </div>
+      </section>
+    </article>
+  </section>
+
+  <section class="section spec-care">
+    <article appReveal>
+      <h2>Product Specifications</h2>
+      @for (spec of item.specifications | keyvalue; track spec.key) {
+        <div><strong>{{ spec.key }}</strong><span>{{ spec.value }}</span></div>
+      }
+    </article>
+    <article appReveal>
+      <h2>Care Instructions</h2>
+      <ul class="feature-list">
+        @for (care of item.care; track care) {
+          <li><i class="fa-solid fa-sparkles"></i> {{ care }}</li>
+        }
+      </ul>
+    </article>
+  </section>
+
+  <section class="section">
+    <div class="section-heading" appReveal>
+      <span class="eyebrow">Related products</span>
+      <h2>More catalogue options to compare.</h2>
+    </div>
+    <div class="product-grid compact" appReveal>
+      @for (relatedProduct of related(); track relatedProduct.id) {
+        <a class="product-card" [routerLink]="['/products', relatedProduct.slug]">
+          <div class="product-media">
+            <img [src]="relatedProduct.image" [alt]="relatedProduct.name" loading="lazy">
+            <span>{{ relatedProduct.badge }}</span>
+          </div>
+          <div>
+            <h3>{{ relatedProduct.name }}</h3>
+            <p>{{ relatedProduct.shortDescription }}</p>
+          </div>
+        </a>
+      }
+    </div>
+  </section>
+} @else {
+  <section class="page-hero">
+    <span class="eyebrow">Product not found</span>
+    <h1>This catalogue item could not be found.</h1>
+    <p>Return to the shop to continue browsing Velluto Impex collections.</p>
+    <a class="btn primary" routerLink="/shop">Back to catalogue</a>
+  </section>
+}

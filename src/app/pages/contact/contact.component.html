@@ -1,0 +1,44 @@
+<section class="page-hero">
+  <span class="eyebrow">Contact</span>
+  <h1>Start a professional textile enquiry.</h1>
+  <p>Share your product interest, destination, and expected usage. The form is frontend-only and ready for future backend connection.</p>
+</section>
+
+<section class="section contact-grid">
+  <aside class="contact-card" appReveal>
+    <h2>Velluto Impex</h2>
+    <p><i class="fa-solid fa-location-dot"></i> 106 George Street, St. Albans, Victoria - 3021, Australia</p>
+    <p><i class="fa-solid fa-phone"></i> <a href="tel:+61451331444">+61 451 331 444</a></p>
+    <p><i class="fa-solid fa-phone"></i> <a href="tel:+919821093097">+91 98210 93097</a></p>
+    <p><i class="fa-solid fa-envelope"></i> <a href="mailto:rohitkem@gmail.com">rohitkem&#64;gmail.com</a></p>
+    <p><i class="fa-solid fa-clock"></i> Monday to Saturday, 9:00 AM - 6:00 PM</p>
+    <div class="map-placeholder" aria-label="Google Map placeholder">
+      <i class="fa-solid fa-map-location-dot"></i>
+      <span>Google Map Placeholder</span>
+    </div>
+  </aside>
+
+  <form class="contact-form" [formGroup]="form" appReveal>
+    <label>
+      <span>Name</span>
+      <input type="text" formControlName="name" placeholder="Your name">
+    </label>
+    <label>
+      <span>Email</span>
+      <input type="email" formControlName="email" placeholder="name@example.com">
+    </label>
+    <label>
+      <span>Phone</span>
+      <input type="tel" formControlName="phone" placeholder="+61">
+    </label>
+    <label>
+      <span>Product interest</span>
+      <input type="text" formControlName="product" placeholder="Optional product or category">
+    </label>
+    <label class="full">
+      <span>Message</span>
+      <textarea rows="6" formControlName="message" placeholder="Tell us about quantities, destination, and preferred textile type"></textarea>
+    </label>
+    <button class="btn primary" type="button" [disabled]="form.invalid"><i class="fa-solid fa-paper-plane"></i> Submit Enquiry</button>
+  </form>
+</section>

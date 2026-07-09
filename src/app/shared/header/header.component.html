@@ -1,0 +1,18 @@
+<header class="navbar">
+  <a class="brand" routerLink="/" aria-label="Velluto Impex home" (click)="close()">
+    <img src="assets/brand/velluto-logo-mark.png" alt="Velluto Impex logo">
+    <span>Velluto Impex</span>
+  </a>
+
+  <button class="nav-toggle" type="button" [attr.aria-expanded]="menuOpen()" aria-label="Toggle navigation" (click)="menuOpen.set(!menuOpen())">
+    <i class="fa-solid" [class.fa-bars]="!menuOpen()" [class.fa-xmark]="menuOpen()"></i>
+  </button>
+
+  <nav class="nav-links" [class.open]="menuOpen()" aria-label="Primary navigation">
+    <a routerLink="/" routerLinkActive="active" [routerLinkActiveOptions]="{ exact: true }" (click)="close()">Home</a>
+    <a routerLink="/about" routerLinkActive="active" (click)="close()">About</a>
+    <a routerLink="/shop" routerLinkActive="active" (click)="close()">Shop</a>
+    <a routerLink="/categories" routerLinkActive="active" (click)="close()">Categories</a>
+    <a routerLink="/contact" routerLinkActive="active" (click)="close()">Contact</a>
+  </nav>
+</header>

@@ -1,0 +1,16 @@
+<section class="page-hero">
+  <span class="eyebrow">Categories</span>
+  <h1>Everyday essentials and premium linen programs for hospitality spaces.</h1>
+  <p>Use categories to move quickly into relevant catalogue groups and product detail pages.</p>
+</section>
+
+<section class="section category-mosaic">
+  @for (category of categories; track category.id) {
+    <a class="category-card large" routerLink="/shop" [queryParams]="{ category: category.slug }" appReveal>
+      <img [src]="category.image" [alt]="category.name" loading="lazy">
+      <span>{{ category.count }} catalogue items</span>
+      <h2>{{ category.name }}</h2>
+      <p>{{ category.description }}</p>
+    </a>
+  }
+</section>

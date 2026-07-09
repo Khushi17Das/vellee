@@ -1,0 +1,27 @@
+<section class="page-hero legal-hero">
+  <span class="eyebrow">Velluto Impex</span>
+  <h1>{{ title() }}</h1>
+  <p>Professional website policy content for a frontend catalogue experience.</p>
+</section>
+
+<section class="section legal-content">
+  @if (type() === 'privacy') {
+    <h2>Information We Collect</h2>
+    <p>Velluto Impex may collect contact details, enquiry details, and product interest information submitted through forms on this website.</p>
+    <h2>How Information Is Used</h2>
+    <p>Information is used to respond to enquiries, provide catalogue support, improve customer communication, and prepare future service integrations.</p>
+    <h2>Data Protection</h2>
+    <p>Reasonable operational and technical measures should be applied when backend services are connected. This frontend prototype does not store submitted form data.</p>
+    <h2>Third-Party Services</h2>
+    <p>The site may use fonts, icons, analytics, or embedded map services. Each third-party service may process data according to its own policy.</p>
+  } @else {
+    <h2>Catalogue Use</h2>
+    <p>This website presents Velluto Impex products as a professional catalogue. It does not provide pricing, cart, checkout, or payment functionality.</p>
+    <h2>Product Information</h2>
+    <p>Descriptions, specifications, colors, and sizes are presented for enquiry guidance and may be updated without notice.</p>
+    <h2>Enquiries</h2>
+    <p>Submitting an enquiry does not create a purchase contract. Any commercial terms should be confirmed directly with Velluto Impex.</p>
+    <h2>Intellectual Property</h2>
+    <p>Branding, layout, written content, and catalogue presentation belong to Velluto Impex unless otherwise stated.</p>
+  }
+</section>

@@ -1,0 +1,23 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 800" role="img" aria-label="Spa towel presentation">
+  <defs>
+    <linearGradient id="bg" x1="0" x2="1" y1="0" y2="1"><stop stop-color="#eef8f6"/><stop offset=".55" stop-color="#fff"/><stop offset="1" stop-color="#fff1e7"/></linearGradient>
+    <filter id="soft"><feDropShadow dx="0" dy="18" stdDeviation="18" flood-color="#1d3557" flood-opacity=".15"/></filter>
+  </defs>
+  <rect width="1200" height="800" fill="url(#bg)"/>
+  <rect x="0" y="590" width="1200" height="210" fill="#efe2d0"/>
+  <g filter="url(#soft)">
+    <circle cx="380" cy="435" r="135" fill="#fff"/>
+    <circle cx="510" cy="435" r="135" fill="#f6dfc8"/>
+    <circle cx="640" cy="435" r="135" fill="#e7f2f0"/>
+    <rect x="310" y="390" width="400" height="88" rx="44" fill="#fff"/>
+    <rect x="340" y="470" width="430" height="92" rx="46" fill="#1d3557" opacity=".94"/>
+  </g>
+  <path d="M345 434h350M382 514h340" stroke="#caa75e" stroke-width="6" opacity=".75"/>
+  <g fill="#2a9d8f" opacity=".3">
+    <ellipse cx="840" cy="344" rx="52" ry="18" transform="rotate(-32 840 344)"/>
+    <ellipse cx="910" cy="390" rx="62" ry="20" transform="rotate(28 910 390)"/>
+    <ellipse cx="890" cy="300" rx="44" ry="15" transform="rotate(-12 890 300)"/>
+  </g>
+  <text x="600" y="190" text-anchor="middle" font-family="Montserrat, Arial" font-size="50" font-weight="700" fill="#17110a">Calm spa-grade texture</text>
+  <text x="600" y="242" text-anchor="middle" font-family="Inter, Arial" font-size="24" fill="#667085">Reusable visual placeholder for future photography</text>
+</svg>

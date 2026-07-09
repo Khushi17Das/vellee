@@ -1,0 +1,25 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 1100" role="img" aria-label="Premium folded towels">
+  <defs>
+    <linearGradient id="bg" x1="0" x2="1" y1="0" y2="1"><stop offset="0" stop-color="#f8fbfa"/><stop offset="0.55" stop-color="#fff7ee"/><stop offset="1" stop-color="#e8f4f2"/></linearGradient>
+    <filter id="shadow"><feDropShadow dx="0" dy="22" stdDeviation="24" flood-color="#1d3557" flood-opacity=".18"/></filter>
+    <pattern id="terry" width="14" height="14" patternUnits="userSpaceOnUse"><circle cx="3" cy="4" r="1.1" fill="#ffffff" opacity=".55"/><circle cx="10" cy="9" r="1.2" fill="#d8c090" opacity=".34"/></pattern>
+  </defs>
+  <rect width="900" height="1100" fill="url(#bg)"/>
+  <circle cx="720" cy="210" r="120" fill="#2a9d8f" opacity=".12"/>
+  <circle cx="210" cy="835" r="165" fill="#f4a261" opacity=".16"/>
+  <g filter="url(#shadow)">
+    <rect x="165" y="255" width="560" height="155" rx="38" fill="#ffffff"/>
+    <rect x="165" y="255" width="560" height="155" rx="38" fill="url(#terry)"/>
+    <rect x="205" y="390" width="520" height="145" rx="34" fill="#e9f2f0"/>
+    <rect x="205" y="390" width="520" height="145" rx="34" fill="url(#terry)"/>
+    <rect x="150" y="520" width="590" height="170" rx="40" fill="#f5e0c9"/>
+    <rect x="150" y="520" width="590" height="170" rx="40" fill="url(#terry)"/>
+    <rect x="205" y="670" width="515" height="145" rx="34" fill="#1d3557" opacity=".94"/>
+    <rect x="205" y="670" width="515" height="145" rx="34" fill="url(#terry)" opacity=".35"/>
+  </g>
+  <g fill="none" stroke="#caa75e" stroke-width="8" opacity=".78">
+    <path d="M205 326h480M245 466h420M207 604h486M248 742h430"/>
+  </g>
+  <text x="450" y="925" text-anchor="middle" font-family="Montserrat, Arial" font-size="44" font-weight="700" fill="#17110a">VELLUTO IMPEX</text>
+  <text x="450" y="976" text-anchor="middle" font-family="Inter, Arial" font-size="24" fill="#667085">Premium hospitality linen catalogue</text>
+</svg>
