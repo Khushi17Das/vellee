@@ -23,7 +23,6 @@ export class HomeComponent implements OnInit, OnDestroy {
 
   protected readonly categories = this.catalog.categories.slice(0, 6);
   protected readonly bestSellers = this.catalog.products.filter((product) => product.bestSeller).slice(0, 6);
-  protected readonly testimonials = this.catalog.testimonials;
   protected readonly stats = signal<Stat[]>([
     { label: 'Hospitality collections', target: 42, suffix: '+', value: 0 },
     { label: 'Quality checkpoints', target: 12, suffix: '', value: 0 },
